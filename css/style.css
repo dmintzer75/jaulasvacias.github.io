@@ -1,0 +1,272 @@
+body {
+  margin: 1.5em;
+  font-family: "poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../assets/dog.jpg");
+  background-size: cover;
+  background-position-x: 0%;
+  background-position-y: 5%;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  width: 50%;
+  z-index: 999;
+  text-transform: uppercase;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+nav .close {
+  margin: 2em;
+  float: right;
+  width: 2.5em;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+nav ul a {
+  color: black;
+  padding: 0.5em 2em;
+  display: block;
+}
+nav ul a:hover {
+  background: rgb(243, 245, 246);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header svg {
+  width: 2em;
+  margin-top: -0.6em;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 2em;
+  line-height: 3.3rem;
+  -webkit-text-stroke: 0.3px black;
+}
+
+.subhead {
+  font-size: 1.2rem;
+  width: 90%;
+  -webkit-text-stroke: 0.1px black;
+}
+
+section.hero {
+  color: white;
+  height: 90vh;
+  width: 50%;
+  -webkit-animation: moveHero 2s ease-in-out forwards;
+          animation: moveHero 2s ease-in-out forwards;
+  opacity: 0;
+}
+section.hero svg.down-arrow {
+  stroke: white;
+  position: absolute;
+  bottom: 2em;
+  width: 1em;
+  height: 4em;
+  animation: moveArrow 1s alternate-reverse infinite;
+}
+section.hero svg.down-arrow path {
+  fill: white;
+}
+
+.more-info img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 20em;
+}
+.more-info .title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.more-info .desc {
+  line-height: 1.5rem;
+}
+
+.open-nav {
+  transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "poppins", sans-serif;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .menu {
+    display: none;
+    height: 100%;
+  }
+  nav {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  nav svg.close {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    margin: 0;
+  }
+  nav ul a {
+    color: white;
+    padding: 1em 1.5em;
+    font-size: 0.9rem;
+  }
+  nav ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+    width: 55%;
+    height: 30em;
+  }
+  .logo {
+    color: black;
+  }
+  .logo span {
+    color: white;
+    -webkit-text-stroke: 1px black;
+  }
+  section.hero {
+    color: black;
+    height: auto;
+    width: 40%;
+    margin-bottom: 10em;
+  }
+  section.hero svg.down-arrow {
+    stroke: black;
+    position: unset;
+  }
+  section.hero svg.down-arrow path {
+    fill: black;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    margin-bottom: 5em;
+  }
+  .feature img {
+    width: 25em;
+    height: 15em;
+  }
+  .feature .content {
+    text-align: right;
+    width: 25em;
+  }
+  .feature.left {
+    grid-template-areas: "left right";
+  }
+  .feature.left img {
+    grid-area: left;
+  }
+  .feature.left .content {
+    text-align: left;
+    width: 25em;
+    margin-right: 5em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .feature {
+    gap: 0;
+  }
+}
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 97% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 97% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  }
+}
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 97% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 97% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  }
+}
+@-webkit-keyframes moveArrow {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes moveArrow {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes moveHero {
+  from {
+    transform: translatey(50px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveHero {
+  from {
+    transform: translatey(50px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
